@@ -50,7 +50,8 @@ Design decisions:
 - Holdings are a collection of stocks *with the number of shares held*: without quantities, the
   portfolio's value can't be known.
 - The allocation is a collection of stocks with a target weight each (`0.4` = 40% of the value),
-  and the weights add up to 1.
+  and the weights are positive and add up to 1. A stock that shouldn't be held is left out of the
+  allocation instead of getting a weight of 0.
 - A held stock that isn't in the allocation has a target of 0%, so it's sold entirely. An
   allocated stock that isn't held is bought from zero.
 - **Fractional shares are allowed**, like most modern brokers and funds. Results are rounded to

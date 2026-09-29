@@ -31,6 +31,15 @@ RSpec.describe PortfolioManagement::Portfolio do
     it 'rejects negative shares' do
       expect { described_class.new(holdings: { meta => -1 }) }.to raise_error(ArgumentError)
     end
+
+    it 'allows zero shares' do
+      expect(described_class.new(holdings: { meta => 0 }).total_value).to eq(0)
+    end
+
+    it 'rejects zero weights' do
+      expect { described_class.new(allocation: { meta => 1, aapl => 0 }) }
+        .to raise_error(ArgumentError, /must be positive/)
+    end
   end
 
   describe '#rebalance' do

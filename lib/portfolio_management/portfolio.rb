@@ -13,7 +13,9 @@ module PortfolioManagement
     attr_reader :holdings, :allocation
 
     # holdings:   Hash of Stock => number of shares
-    # allocation: Hash of Stock => target weight (must add up to 1)
+    #             Zero is allowed, e.g. after selling a whole position.
+    # allocation: Hash of Stock => target weight (positive, must add up to 1).
+    #             A stock that shouldn't be held is simply left out.
     def initialize(holdings: {}, allocation: {})
       @holdings = holdings.transform_values(&:to_d).freeze
       @allocation = allocation.transform_values(&:to_d).freeze
@@ -83,7 +85,7 @@ module PortfolioManagement
 
     def validate!
       raise ArgumentError, 'shares cannot be negative' if holdings.values.any?(&:negative?)
-      raise ArgumentError, 'weights cannot be negative' if allocation.values.any?(&:negative?)
+      raise ArgumentError, 'weights must be positive' unless allocation.values.all?(&:positive?)
       return if allocation.empty? || allocation.values.sum == 1
 
       raise ArgumentError, 'allocation weights must add up to 1'
