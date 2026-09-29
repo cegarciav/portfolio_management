@@ -41,7 +41,7 @@ Design decisions:
 - **No side effects.** `rebalance` only answers a question; it doesn't modify the portfolio.
   Holdings and allocation are frozen.
 - **`BigDecimal` for money and shares**, to avoid floating-point rounding errors.
-- **No runtime dependencies**, only the Ruby standard library.
+- **One runtime dependency**: `bigdecimal`, which shipped with Ruby until 3.4.
 
 ## Assumptions
 
@@ -73,7 +73,7 @@ _TODO: links to the LLM conversations used while solving this challenge (require
 
 ## Requirements
 
-- Ruby >= 3.0
+- Ruby 4.0 (see `.ruby-version`)
 - Bundler
 
 ## Setup

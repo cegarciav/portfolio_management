@@ -2,7 +2,10 @@
 
 source 'https://rubygems.org'
 
-ruby '>= 3.0'
+ruby '~> 4.0'
+
+# Not a default gem since Ruby 3.4, so it must be declared.
+gem 'bigdecimal'
 
 group :development, :test do
   gem 'rake', '~> 13.0'
