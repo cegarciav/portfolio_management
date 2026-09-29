@@ -70,7 +70,10 @@ Design decisions:
 
 ## LLM usage
 
-_TODO: links to the LLM conversations used while solving this challenge (required by the challenge)._
+This challenge was solved with Claude Code (Claude Opus 5.5). The full conversation is in
+[docs/llm-conversation.md](docs/llm-conversation.md), exported with Claude Code's `/export` command.
+
+Local paths and account details were replaced with `********`; nothing else was edited.
 
 ## Requirements
 
