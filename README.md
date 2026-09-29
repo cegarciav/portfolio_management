@@ -72,10 +72,15 @@ Design decisions:
 
 ## LLM usage
 
-This challenge was solved with Claude Code (Claude Opus 5.5). The full conversation is in
-[docs/llm-conversation.md](docs/llm-conversation.md), exported with Claude Code's `/export` command.
+**Why an LLM, and why Ruby.** I used Claude Code on purpose: I'm practicing delegating code
+writing to an LLM while I own the problem definition, the design decisions and the review. The
+decisions in this repo came out of that back-and-forth, and the whole conversation is in
+[docs/llm-conversation.md](docs/llm-conversation.md). I chose Ruby because it's Fintual's main
+stack, even though I haven't written it in years. I relied on the LLM for Ruby idioms and tooling,
+and focused my own effort on the logic and on checking the result.
 
-Local paths and account details were replaced with `********`; nothing else was edited.
+Solved with Claude Code (Claude Opus 5.5) and exported with its `/export` command. Local paths and
+account details were replaced with `********`; nothing else was edited.
 
 ## Requirements
 
