@@ -9,3 +9,4 @@ end
 
 require_relative 'portfolio_management/version'
 require_relative 'portfolio_management/stock'
+require_relative 'portfolio_management/portfolio'
