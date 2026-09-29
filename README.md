@@ -45,8 +45,10 @@ Design decisions:
 
 ## Assumptions
 
-- A `Stock` has a unique identifier (its ticker symbol) and a `current_price` with the last
-  available price. Two `Stock` objects with the same symbol are the same stock.
+- A `Stock` has a unique identifier (its ticker symbol). Two `Stock` objects with the same symbol
+  are the same stock.
+- The challenge says the "Current Price" method *receives* the last available price. We read that
+  as *returns* it: `stock.current_price` takes no arguments and returns the stock's latest price.
 - Holdings are a collection of stocks *with the number of shares held*: without quantities, the
   portfolio's value can't be known.
 - The allocation is a collection of stocks with a target weight each (`0.4` = 40% of the value),
