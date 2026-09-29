@@ -1,0 +1,11 @@
+/.bundle/
+/vendor/bundle/
+/coverage/
+/pkg/
+/tmp/
+*.gem
+.rspec_status
+.DS_Store
+
+# Job description (not part of the solution)
+Fintual_Senior_Software_Engineer.pdf
